@@ -25,32 +25,32 @@ def detect_anomaly(processed_img:np.ndarray, k=1.5):
         
     return anomaly_mask
 
-def get_processed_img(path: str):
-    img_arr=load_image(path)
-    img_arr=img_arr.astype(np.float64)
-    while(True):
-        ch1=int(input("Enter option:\n1. Greyscale\n2. RGB Avg\n3. Single Channel\nYour Choice: "))
-        if ch1==1:
-            process_img=get_greyscale_img(img_arr)
-            break
-        elif ch1==2:
-            process_img=get_rgb_avg_img(img_arr)
-            break
-        elif ch1==3:
-            while(True):
-                ch2=str(input("Enter option (R, G, B): "))
-                ch2=ch2.lower()
-                if ch2=="r":
-                    process_img=get_channel_img(img_arr ,"R")
-                    break
-                elif ch2=='g':
-                    process_img=get_channel_img(img_arr ,"G")
-                    break
-                elif ch2=='b':
-                    process_img=get_channel_img(img_arr ,"B")
-                    break
-            break
-    return process_img
+# def get_processed_img(path: str):
+#     img_arr=load_image(path)
+#     img_arr=img_arr.astype(np.float64)
+#     while(True):
+#         ch1=int(input("Enter option:\n1. Greyscale\n2. RGB Avg\n3. Single Channel\nYour Choice: "))
+#         if ch1==1:
+#             process_img=get_greyscale_img(img_arr)
+#             break
+#         elif ch1==2:
+#             process_img=get_rgb_avg_img(img_arr)
+#             break
+#         elif ch1==3:
+#             while(True):
+#                 ch2=str(input("Enter option (R, G, B): "))
+#                 ch2=ch2.lower()
+#                 if ch2=="r":
+#                     process_img=get_channel_img(img_arr ,"R")
+#                     break
+#                 elif ch2=='g':
+#                     process_img=get_channel_img(img_arr ,"G")
+#                     break
+#                 elif ch2=='b':
+#                     process_img=get_channel_img(img_arr ,"B")
+#                     break
+#             break
+#     return process_img
 
 # print(detect_anaomaly(process_img).shape)   
 # print(process_img.shape)              

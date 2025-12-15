@@ -2,7 +2,7 @@ from image_loader import load_image
 import numpy as np
 import matplotlib.pyplot as plt
 
-img_arr=load_image()
+
 
 def normalizer(img_arr: np.ndarray):
     img_arr=img_arr.astype(np.float64)
@@ -36,6 +36,22 @@ def get_channel_img(img_arr: np.ndarray, channel: str):
     
     channel_img=normalizer(channel_img)    
     return channel_img
+
+def get_channel_R_img(img_arr: np.ndarray):
+    channel_img=img_arr[:, :, 0]
+    channel_img=normalizer(channel_img)    
+    return channel_img
+
+def get_channel_G_img(img_arr: np.ndarray):
+    channel_img=img_arr[:, :, 1]
+    channel_img=normalizer(channel_img)    
+    return channel_img
+
+def get_channel_B_img(img_arr: np.ndarray):
+    channel_img=img_arr[:, :, 2]
+    channel_img=normalizer(channel_img)    
+    return channel_img
+    
 
 
 # norm=normalizer(img_arr)
