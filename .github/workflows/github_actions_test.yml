@@ -1,0 +1,24 @@
+name: Test before deployment
+
+on: 
+  push: 
+    branches:
+        - main
+
+jobs: 
+    dev_test: 
+        runs-on: ubuntu-latest
+
+        container: 
+            image: python:3.13-slim
+
+        steps:
+            - name: checkout
+              uses: actions/checkout@v4
+        
+            - name: Install dependancies
+              run: pip install -r "requirements.txt"
+
+            - name: run code
+              run: streamlit run app.py
+
