@@ -20,5 +20,5 @@ jobs:
               run: pip install -r "requirements.txt"
 
             - name: run code
-              run: streamlit run app.py
+              run: streamlit run app.py --server.headless true & sleep 60 && kill $!
 
