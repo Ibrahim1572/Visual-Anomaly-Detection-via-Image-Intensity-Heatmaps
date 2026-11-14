@@ -121,8 +121,8 @@ elif image_source == "Sample Image":
     sample_path = st.selectbox(
         "Select Sample",
         [
-            r"D:\AI_Lab_Project_Sem3\Visual-Anomaly-Detection-via-Image-Intensity-Heatmaps\sample_image.png",
-            r"D:\AI_Lab_Project_Sem3\Visual-Anomaly-Detection-via-Image-Intensity-Heatmaps\Hitler.png",
+            r"sample_image.png",
+            r"Hitler.png",
         ]
     )
     uploaded_image = sample_path
